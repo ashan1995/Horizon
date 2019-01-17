@@ -1,0 +1,35 @@
+<div class="row signupfrm">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+     <form action="">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Add item</mat-card-title>
+              </mat-card-header>
+            <div class="example-container">
+              <mat-form-field>
+                <input matInput placeholder="Item name" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput placeholder="Unit price" required>
+              </mat-form-field>
+                <mat-form-field>
+                  <mat-select placeholder="Favorite food">
+                    <mat-option *ngFor="let food of foods" [value]="food.value">
+                      {{food.viewValue}}
+                    </mat-option>
+                  
+                  </mat-select>
+                </mat-form-field>
+       
+           
+              <button mat-raised-button color="primary" class="loginbtn" type="submit">Sign up</button>
+            </div>
+          </mat-card>
+    </form>
+   
+  </div>  
+  
+  <div class="col-md-3"></div>
+</div>
+
