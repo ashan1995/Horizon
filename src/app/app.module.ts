@@ -15,6 +15,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NewbillComponent } from './main-nav/newbill/newbill.component';
 import { AdditemComponent } from './main-nav/additem/additem.component';
 import { AddstockComponent } from './main-nav/addstock/addstock.component';
+import { ItemListComponent } from './main-nav/newbill/item-list/item-list.component';
+import { RouterModule } from '@angular/router';
+import { routes } from './app-routing.module';
+import { AuthGuard } from './guards/auth-guard.service';
+import { AuthService } from './services/auth.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +33,8 @@ import { AddstockComponent } from './main-nav/addstock/addstock.component';
     MainNavComponent,
     NewbillComponent,
     AdditemComponent,
-    AddstockComponent
+    AddstockComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,8 +50,9 @@ import { AddstockComponent } from './main-nav/addstock/addstock.component';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    RouterModule.forRoot(routes) 
   ],
-  providers: [],
+  providers: [AuthGuard,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

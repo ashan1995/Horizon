@@ -1,3 +1,41 @@
-<p>
-  newbill works!
-</p>
+<div class="row signupfrm">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+     <form action="">
+        <mat-card class="example-card">
+            <mat-card-header>
+                <mat-card-title>Bill</mat-card-title>
+            </mat-card-header>
+            <div class="example-container">
+              <mat-form-field>
+                <input matInput placeholder="Customer name" required>
+              </mat-form-field>
+           <h4>Select items</h4>
+            <div class="item-list">
+              <app-item-list></app-item-list>
+            </div> 
+            <h4>Cart</h4>
+            <div class="cart">
+                <mat-card class="example-card2">
+                    <mat-card-header>
+                        <mat-card-title>Game of thrones</mat-card-title>
+                    </mat-card-header>
+                    <mat-form-field>
+                        <input matInput placeholder="Number of items" required>
+                      </mat-form-field>
+                  <button class="btn btn-danger addtocartbtn">Remove</button>
+                  </mat-card>
+            </div>
+            <h1>Amount</h1>
+       
+           
+              <button mat-raised-button color="primary" class="loginbtn" type="submit">Create bill</button>
+            </div>
+          </mat-card>
+    </form>
+   
+  </div>  
+  
+  <div class="col-md-3"></div>
+</div>
+

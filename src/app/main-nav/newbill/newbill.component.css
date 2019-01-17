@@ -1,0 +1,34 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+.loginbtn{
+    width:50% !important;
+}  
+.signupfrm{
+    margin-top:50px;
+}
+.item-list{
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.example-card2{
+    margin:5px;
+}
+
+.addtocartbtn{
+    margin-left: 5px;
+}
+.cart{
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 200px;
+    overflow-y: scroll;
+}
