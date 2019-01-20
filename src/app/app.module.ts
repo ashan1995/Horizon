@@ -20,6 +20,8 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app-routing.module';
 import { AuthGuard } from './guards/auth-guard.service';
 import { AuthService } from './services/auth.service';
+import { CartService } from './services/cart.service';
+import { EmployeeService } from './services/employee.service';
 
 
 
@@ -52,7 +54,12 @@ import { AuthService } from './services/auth.service';
     MatListModule,
     RouterModule.forRoot(routes) 
   ],
-  providers: [AuthGuard,AuthService],
+  providers: [
+    AuthGuard,
+    AuthService,
+    CartService,
+    EmployeeService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

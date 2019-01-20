@@ -3,7 +3,10 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)">
-    <mat-toolbar>Horizon</mat-toolbar>
+    <mat-toolbar>
+      Horizon
+     
+    </mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="newbill" routerLinkActive="active">New Bill</a>
       <a mat-list-item routerLink="additem" routerLinkActive="active">Add item</a>
@@ -21,6 +24,7 @@
         <mat-icon aria-label="Side nav toggle icon"><i class="fas fa-align-justify"></i></mat-icon>
       </button>
       <span>Horizon</span>
+      <button (click)="logout()" class="btn btn-danger">Logout</button>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

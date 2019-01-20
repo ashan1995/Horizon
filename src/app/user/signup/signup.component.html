@@ -1,31 +1,32 @@
 <div class="row signupfrm">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-     <form action="">
         <mat-card class="example-card">
+            <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
             <mat-card-header>
                 <mat-card-title>Sign In</mat-card-title>
               </mat-card-header>
             <div class="example-container">
               <mat-form-field>
-                <input matInput placeholder="First name" required>
+                <input matInput placeholder="First name" required ngModel name="firstName">
               </mat-form-field>
               <mat-form-field>
-                <input matInput placeholder="Last name" required>
+                <input matInput placeholder="Last name" required ngModel name="lastName">
               </mat-form-field>
               <mat-form-field>
-                <input matInput placeholder="Username" required>
+                <input matInput placeholder="Username" required ngModel name="username">
               </mat-form-field>
               <mat-form-field>
-                <input matInput type="password" placeholder="Password" required>
+                <input matInput type="password" placeholder="Password" required ngModel name="password">
               </mat-form-field>
               <mat-form-field>
-                <input matInput type="password" placeholder="Retype password" required>
+                <input matInput type="password" placeholder="Retype password" required ngModel name="reTypePassword">
               </mat-form-field>
-              <button mat-raised-button color="primary" class="loginbtn" type="submit">Sign up</button>
+              <button mat-raised-button color="primary" class="loginbtn" type="submit" [disabled]="!f.valid || (passwordMatch(f.value))">Sign up</button>
             </div>
+          </form>
           </mat-card>
-    </form>
+  
    
   </div>  
   

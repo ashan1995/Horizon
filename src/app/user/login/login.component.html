@@ -1,23 +1,29 @@
 <div class="row loginfrm">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-      <form action="">
+     
         <mat-card class="example-card">
-            <mat-card-header>
-                <mat-card-title>Sign In</mat-card-title>
-              </mat-card-header>
+            <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+          <mat-card-header>
+            <mat-card-title>Sign In</mat-card-title>
+          </mat-card-header>
+         
           <div class="example-container">
-            <mat-form-field>
-              <input matInput placeholder="Username">
-            </mat-form-field>
-            <mat-form-field>
-              <input matInput placeholder="Password">
-            </mat-form-field>
-            <button mat-raised-button color="primary" class="loginbtn">Log In</button>
+              <mat-form-field>
+                <input matInput placeholder="Username" ngModel name="username" required>
+              </mat-form-field>
+              <mat-form-field>
+                <input matInput type="password" placeholder="Password" ngModel name="password" required>
+              </mat-form-field>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!f.valid"  class="loginbtn">Log In</button>
+           
           </div>
+      
+          <a routerLink="/user/signup" routerLinkActive="active">Create new account</a>
+        </form>
         </mat-card>
      
-      </form>
+      
     </div>
     <div class="col-md-3"></div>
 </div>
