@@ -12,19 +12,21 @@
               </mat-form-field>
            <h4>Select items</h4>
             <div class="item-list">
-              <app-item-list></app-item-list>
+              <app-item-list (itemSelected)="onChoose($event)"></app-item-list>
             </div> 
             <h4>Cart</h4>
             <div class="cart">
-                <mat-card class="example-card2">
+            
+                <mat-card *ngFor="let cartitem of cartItems" class="example-card2">
+                
                     <mat-card-header>
-                        <mat-card-title>Game of thrones</mat-card-title>
+                        <mat-card-title>{{cartitem.name}}</mat-card-title>
                     </mat-card-header>
-                    <mat-form-field>
-                        <input matInput placeholder="Number of items" required>
-                      </mat-form-field>
-                  <button class="btn btn-danger addtocartbtn">Remove</button>
+                    <h2>{{cartitem.quantity}}</h2>
+                  <button (click)="remove(cartitem)" class="btn btn-danger addtocartbtn">Remove</button>
+              
                   </mat-card>
+               
             </div>
             <h1>Amount</h1>
        

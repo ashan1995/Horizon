@@ -1,19 +1,12 @@
 
-<mat-card class="example-card">
+<mat-card *ngFor="let item of items" class="example-card">
+    <form (ngSubmit)="onSelected(f.value,item)" #f="ngForm">
   <mat-card-header>
-      <mat-card-title>Game of thrones</mat-card-title>
+      <mat-card-title>{{item.name}}</mat-card-title>
   </mat-card-header>
   <mat-form-field>
-      <input matInput placeholder="Number of items" required>
+      <input matInput placeholder="Number of items" required ngModel name="quantity">
     </mat-form-field>
 <button class="btn btn-danger addtocartbtn">Add to cart</button>
+</form>
 </mat-card>
-<mat-card class="example-card">
-    <mat-card-header>
-        <mat-card-title>Game of thrones</mat-card-title>
-    </mat-card-header>
-    <mat-form-field>
-        <input matInput placeholder="Number of items" required>
-      </mat-form-field>
-  <button class="btn btn-danger addtocartbtn">Add to cart</button>
-  </mat-card>

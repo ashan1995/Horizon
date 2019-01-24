@@ -1,22 +1,22 @@
 <div class="row signupfrm">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-     <form action="">
+     <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
         <mat-card class="example-card">
             <mat-card-header>
                 <mat-card-title>Add item</mat-card-title>
               </mat-card-header>
             <div class="example-container">
               <mat-form-field>
-                <input matInput placeholder="Item name" required>
+                <input matInput placeholder="Item name" required ngModel name="name">
               </mat-form-field>
               <mat-form-field>
-                <input matInput placeholder="Unit price" required>
+                <input matInput placeholder="Unit price" required ngModel name="unitPrice">
               </mat-form-field>
                 <mat-form-field>
-                  <mat-select placeholder="Category">
-                    <mat-option *ngFor="let food of foods" [value]="food.value">
-                      {{food.viewValue}}
+                  <mat-select placeholder="Category" ngModel name="category">
+                    <mat-option *ngFor="let cat of categories" [value]="cat.value" >
+                      {{cat.viewValue}}
                     </mat-option>
                   
                   </mat-select>
