@@ -9,7 +9,7 @@ import { CartItem } from '../../../shared/cart-item';
 interface ReceivedItem{
   itemId:number,
   name: string,
-  unitPrice: string,
+  unitPrice: number,
   category:string,
   stock:number
 }
@@ -35,10 +35,10 @@ export class ItemListComponent implements OnInit {
     this.http.get('/api/Items/').subscribe(
       (data:ReceivedItem[])=>{
         this.items=data;
-        console.log(data);
+        // console.log(data);
       }
     );
-      console.log(this.items);
+      // console.log(this.items);
   }
 
   onSelected(formValue,itemData:ReceivedItem){

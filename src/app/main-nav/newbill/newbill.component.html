@@ -1,14 +1,14 @@
 <div class="row signupfrm">
   <div class="col-md-3"></div>
   <div class="col-md-6">
-     <form action="">
+     <form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
         <mat-card class="example-card">
             <mat-card-header>
                 <mat-card-title>Bill</mat-card-title>
             </mat-card-header>
             <div class="example-container">
               <mat-form-field>
-                <input matInput placeholder="Customer name" required>
+                <input matInput placeholder="Customer name" ngModel name="customerName" required>
               </mat-form-field>
            <h4>Select items</h4>
             <div class="item-list">
@@ -28,7 +28,7 @@
                   </mat-card>
                
             </div>
-            <h1>Amount</h1>
+            <h1>{{amount}}</h1>
        
            
               <button mat-raised-button color="primary" class="loginbtn" type="submit">Create bill</button>

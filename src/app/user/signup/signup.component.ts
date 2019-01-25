@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
     this._emp=new Employee(employee.firstName,employee.lastName,employee.username,employee.password);
     console.log(this._emp);
     this.empService.storeData(this._emp).subscribe();
+
   }
 
   passwordMatch(value){

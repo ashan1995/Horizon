@@ -28,7 +28,7 @@ export class AdditemComponent implements OnInit {
 
   onSubmit(item:Item){
     this._item=new Item(item.name,item.unitPrice,item.category,0);
-    console.log(this._item);
+    // console.log(this._item);
     this.itemService.newitem(this._item).subscribe();
   }
 

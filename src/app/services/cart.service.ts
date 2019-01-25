@@ -1,20 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { Product } from '../product';
+import { Bill } from '../shared/bill';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-
-  // constructor(private httpclient : HttpClient) {}
-  // private cartSubject = new Subject<CartState>();
-  // Products : Product[]= [];
-  // CartState = this.cartSubject.asObservable();
-
-  // addProduct(_product:any) {
-  //   this.Products.push(_product)
-  //   this.cartSubject.next(<CartState>{loaded: true, products:    this.Products});
-  // }
+  constructor(private http:HttpClient){}
+  
+  createBill(value:Bill){
+    const body=JSON.stringify(value);
+    const headers= new  HttpHeaders({
+      'Access-Control-Allow-Origin':'*',
+      'Content-Type':'application/json'
+    });
+    return this.http.post('/api/Bill/',body,{headers:headers});
+  }
 }
+
